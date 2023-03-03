@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .table-container {
+      border: 2px solid #007BA3;
+      max-height: 500px;
+      overflow-y: scroll;
+      margin: 50px auto;
+      width: 80%;
+      max-width: 1000px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background-color: #007BA3;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #fff;
+    }
+    td {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<h1>Analysis Results</h1>
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Highest Mark</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${resultList}">
+      <td th:text="${result.id}"></td>
+      <td th:text="${result.name}"></td>
+      <td th:text="${result.highest}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

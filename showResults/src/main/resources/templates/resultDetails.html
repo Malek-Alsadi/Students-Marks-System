@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis Result Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+    }
+    .first-col {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Analysis Result Details</h1>
+  <table>
+    <tr>
+      <td class="first-col">ID:</td>
+      <td th:text="${result.id}"></td>
+    </tr>
+    <tr>
+      <td class="first-col">Name:</td>
+      <td th:text="${result.name}"></td>
+    </tr>
+    <tr>
+      <td class="first-col">AVG:</td>
+      <td th:text="${result.AVG}"></td>
+    </tr>
+    <tr>
+      <td class="first-col">Highest Mark:</td>
+      <td th:text="${result.highest}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+

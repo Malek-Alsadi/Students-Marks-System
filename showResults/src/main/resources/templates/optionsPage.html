@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose an Option</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .option {
+            margin: 20px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #C0C0C0;
+            text-align: center;
+        }
+
+        .option:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #C0C0C0;
+        }
+
+        .option h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .option p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .option button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #008CBA;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #C0C0C0;
+            transition: background-color 0.3s;
+        }
+
+        .option button:hover {
+            background-color: #007BA3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Choose an Option</h1>
+    <div class="options">
+        <div class="option" onclick="window.location.href='/AVG'">
+            <h2>GPA for all students</h2>
+            <p>Calculate the average grade point average (GPA) for all students in the database.</p>
+            <button>View GPA</button>
+        </div>
+        <div class="option" onclick="window.location.href='/highest'">
+            <h2>Highest grade for each student</h2>
+            <p>Show the highest grade achieved by each student in the database.</p>
+            <button>View Grades</button>
+        </div>
+        <div class="option" onclick="window.location.href='/askId'">
+            <h2>Search By ID</h2>
+            <p>Search for a specific student by their ID number.</p>
+            <button>Search</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

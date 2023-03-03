@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #555;
+        }
+        form {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<h1>Home Page</h1>
+<form action="/submitGrades" method="post">
+    <label for="StudentName">Student Name:</label>
+    <input id="StudentName" name="StudentName" type="text">
+
+    <label for="MathGrade">Math Grade:</label>
+    <input id="MathGrade" name="MathGrade" type="text">
+
+    <label for="EnglishGrade">English Grade:</label>
+    <input id="EnglishGrade" name="EnglishGrade" type="text">
+
+    <label for="ArabicGrade">Arabic Grade:</label>
+    <input id="ArabicGrade" name="ArabicGrade" type="text">
+
+    <label for="ScienceGrade">Science Grade:</label>
+    <input id="ScienceGrade" name="ScienceGrade" type="text">
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
