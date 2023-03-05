@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class WhitePageHandle {
     @ExceptionHandler(NullPointerException.class)
     public String handleNullPointerException() {
-        return "error"; // return the name of the error page
+        return "error";
     }
 }

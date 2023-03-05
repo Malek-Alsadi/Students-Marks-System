@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ProjectController {
 
     private final markService marks;
-
+    private int cnt = 0;
     @Autowired
     public ProjectController(markService marks) {
         this.marks = marks;
@@ -37,7 +37,7 @@ public class ProjectController {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://localhost:2106/auth";
+        String url = "http://auth:2106/auth";
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("UserName", username);
         map.add("Password", password);
@@ -75,12 +75,11 @@ public class ProjectController {
             return "redirect:/login";
         }
 
-
-        StudentMarks marks1 = new StudentMarks(studentName, mathGrade, englishGrade, arabicGrade, scienceGrade);
+        StudentMarks marks1 = new StudentMarks(cnt++ ,studentName, mathGrade, englishGrade, arabicGrade, scienceGrade);
         marks.addStudent(marks1);
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:2107/AddOne";
+        String url = "http://analytic:2107/AddOne";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<StudentMarks> requestEntity = new HttpEntity<>(marks1, headers);

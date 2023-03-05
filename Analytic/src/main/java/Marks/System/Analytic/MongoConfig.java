@@ -11,12 +11,12 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class MongoConfig extends AbstractMongoClientConfiguration {
     @Override
     protected String getDatabaseName() {
-        return "AnalyticData2";
+        return "AnalyticData";
     }
 
     @Override
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb://localhost:27017");
+        return MongoClients.create("mongodb://mongoDB:27017");
     }
 
     @Bean

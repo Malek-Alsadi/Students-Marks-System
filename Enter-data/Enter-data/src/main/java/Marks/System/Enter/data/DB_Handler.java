@@ -9,17 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository("MYSQL")
-public class DB_Handler {
+public class  DB_Handler {
     private DataSource DB;
 
     public DB_Handler() {
         DB = getDataSource();
+        if(!isTableExist()){
+            createTable();
+        }
     }
 
     private DataSource getDataSource() {
         MysqlDataSource ds = new MysqlDataSource();
         try {
-            ds.setServerName("localhost");
+            ds.setServerName("mysqlDB");
             ds.setDatabaseName("sqlDB");
             ds.setUser("root");
             ds.setPassword("1234");
@@ -29,6 +32,39 @@ public class DB_Handler {
             throw new RuntimeException(e);
         }
         return ds;
+    }
+
+    public boolean isTableExist() {
+        try {
+            Connection connection = DB.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'marks'");
+            boolean exists = resultSet.next();
+            if (!exists) {
+                statement.execute("CREATE TABLE your_table_name (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))");
+            }
+            return exists;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void createTable() {
+        try (Connection conn = DB.getConnection()) {
+            String sql = "CREATE TABLE marks (" +
+                    "id INT PRIMARY KEY AUTO_INCREMENT," +
+                    "name VARCHAR(50) NOT NULL," +
+                    "math FLOAT NOT NULL," +
+                    "english FLOAT NOT NULL," +
+                    "arabic FLOAT NOT NULL," +
+                    "science FLOAT NOT NULL" +
+                    ")";
+            PreparedStatement pStmt = conn.prepareCall(sql);
+            pStmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int insertStudent(StudentMarks marks) {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Enter-data" />
+        <module name="Authentication" />
+        <module name="Analytic" />
+        <module name="showResults" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Analytic" target="19" />
+      <module name="Authentication" target="19" />
+      <module name="Enter-data" target="19" />
+      <module name="showResults" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Analytic" options="-parameters" />
+      <module name="Authentication" options="-parameters" />
+      <module name="Enter-data" options="-parameters" />
+      <module name="showResults" options="-parameters" />
+    </option>
+  </component>
+</project>

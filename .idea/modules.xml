@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Analytic/Analytic.iml" filepath="$PROJECT_DIR$/Analytic/Analytic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Authentication/Authentication/Authentication.iml" filepath="$PROJECT_DIR$/Authentication/Authentication/Authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Enter-data/Enter-data/Enter-data.iml" filepath="$PROJECT_DIR$/Enter-data/Enter-data/Enter-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/showResults/showResults.iml" filepath="$PROJECT_DIR$/showResults/showResults.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/student-marks-system.iml" filepath="$PROJECT_DIR$/.idea/student-marks-system.iml" />
+    </modules>
+  </component>
+</project>

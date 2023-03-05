@@ -13,7 +13,7 @@ import java.util.List;
 public class marksService {
     private final DB_Handler mysqlHandler;
     private final MongoTemplate mongoTemplate;
-
+    private static int id = 0;
     @Autowired
     marksService(@Qualifier("MYSQL") DB_Handler mysqlHandler,MongoTemplate mongoTemplate) {
         this.mysqlHandler = mysqlHandler;
@@ -28,7 +28,8 @@ public class marksService {
         return mysqlHandler.allStudents();
     }
     public List<AnalysisResult> getResults(){
-        return mongoTemplate.findAll(AnalysisResult.class, "analysis_result");
+        List<AnalysisResult> tmp = mongoTemplate.findAll(AnalysisResult.class, "analysis_result");
+        return tmp;
     }
 
     public void analyzeAndInsertAll() {

@@ -1,0 +1,58 @@
+version: '3'
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongoDB
+    restart: always
+    ports:
+      - "27017:27017"
+
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysqlDB
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: sqlDB
+    ports:
+      - "3306:3306"
+
+  auth:
+    build: ./Authentication/Authentication
+    restart: always
+    container_name: auth
+    ports:
+      - "2106:2106"
+
+  analytics:
+    build: ./Analytic
+    container_name: analytic
+    restart: always
+    ports:
+      - "2107:2107"
+    depends_on:
+      - mysql
+      - mongo
+
+  result:
+    build: ./showResults
+    container_name: Result
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - auth
+      - mongo
+
+  input-data:
+    build: ./Enter-data/Enter-data
+    restart: always
+    container_name: enter-data
+    ports:
+      - "2105:2105"
+    depends_on:
+      - mysql
+      - auth
+      - analytics
+      - result

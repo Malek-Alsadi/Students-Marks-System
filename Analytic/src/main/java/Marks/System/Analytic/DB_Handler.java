@@ -19,7 +19,7 @@ public class DB_Handler {
     private DataSource getDataSource() {
         MysqlDataSource ds = new MysqlDataSource();
         try {
-            ds.setServerName("localhost");
+            ds.setServerName("mysqlDB");
             ds.setDatabaseName("sqlDB");
             ds.setUser("root");
             ds.setPassword("1234");

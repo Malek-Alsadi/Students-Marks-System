@@ -64,7 +64,7 @@ public class ResultController {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://localhost:2106/auth";
+        String url = "http://auth:2106/auth";
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("UserName", username);
         map.add("Password", password);
